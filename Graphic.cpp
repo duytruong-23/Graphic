@@ -5,15 +5,7 @@ void resizeConsole(int width, int height)
 {
 	HWND console = GetConsoleWindow();
 	RECT r;
-	GetWinvoid gotoxy(int x, int y)
-{
-	HANDLE hout;
-	COORD Position;
-	hout = GetStdHandle(STD_OUTPUT_HANDLE);
-	Position.X = x;
-	Position.Y = y;
-	SetConsoleCursorPosition(hout, Position);
-}dowRect(console, &r);
+	GetWindowRect(console, &r);
 	MoveWindow(console, r.left, r.top, width, height, TRUE);
 }
 
